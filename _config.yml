@@ -18,7 +18,7 @@ email: work.parthjethva@gmail.com
 description: Cyber Security And Forensics Science, Student At Gujarat University.
 twitter_username: parthjethva1407
 github_username: parthjethva1407
-minimal_mistakes_skin: neon
+minimal_mistakes_skin: "neon"
 search: true
 
 # Build settings
@@ -64,25 +64,25 @@ author:
       url: "https://linktr.ee/Parth_Jethva"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/parthjethva1407?t=b9R4kTqncdV3t0H7ekk6UA&s=09"
+      url: "https://twitter.com/parthjethva1407"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/parthjethva1407"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/parth_jethva_14?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
+      url: "https://instagram.com/parth_jethva_14"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/parthjethva1407?t=b9R4kTqncdV3t0H7ekk6UA&s=09"
+      url: "https://twitter.com/parthjethva1407"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/parthjethva1407"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/parth_jethva_14?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
+      url: "https://instagram.com/parth_jethva_14"
 
 defaults:
   # _posts

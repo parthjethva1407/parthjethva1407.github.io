@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "Parth Jethva"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Cyber Security And Forensics Science | Student At Gujarat University | Cyber Security Enthusiast | DFIR intern at heritage cyber world."
+  bio    : "Cyber Security And Forensics Science, Student At Gujarat University."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"

@@ -3,10 +3,8 @@ layout: single
 author_profile: true
 ---
 
-
+## Parth Jethva
 Cyber Security and Forensics Science | Student at Gujarat University | DFIR Intern at Heritage Cyber World
-
----
 
 ## About Me
 Cyber Security Enthusiast with a passion for digital forensics and incident response. Currently pursuing an Integrated M.Sc in Cyber Security and Forensic Science at Gujarat University.

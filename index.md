@@ -19,7 +19,11 @@ Gaining hands-on experience in cyber forensics and security operations.
 Education
 Gujarat University
 Integrated M.Sc in Cyber Security and Forensic Science (Aug 2022 - Present)
-Grade: SEM-1 6.48 | SEM-2 6.02 | SEM-3 7.80 | SEM-4 7.45
+Grade:
+- SEM-1: 6.48
+- SEM-2: 6.02
+- SEM-3: 7.80
+- SEM-4: 7.45
 
 Skills
 - Cyber Security Fundamentals
@@ -32,4 +36,3 @@ Contact
 Email: your.email@example.com
 Location: Ahmedabad, Gujarat, India
 LinkedIn: linkedin.com/in/parthjethva
-

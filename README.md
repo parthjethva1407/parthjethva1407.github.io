@@ -1,27 +1,37 @@
-# Minimal Mistakes remote theme starter
-
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
-
-Contains basic configuration to get you a site with:
-
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
-
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
-
+---
+layout: single
+author_profile: true
 ---
 
-## Troubleshooting
+## Parth Jethva
+Cyber Security and Forensics Science | Student at Gujarat University | DFIR Intern at Heritage Cyber World
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+## About Me
+Cyber Security Enthusiast with a passion for digital forensics and incident response. Currently pursuing an Integrated M.Sc in Cyber Security and Forensic Science at Gujarat University.
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+## Experience
+### Digital Forensics and Incident Response Intern  
+**Heritage Cyber World | Jan 2025 - Present**  
+Gaining hands-on experience in cyber forensics and security operations.
+
+## Education
+### Gujarat University  
+**Integrated M.Sc in Cyber Security and Forensic Science (Aug 2022 - Present)**
+
+**Grade:**  
+- SEM-1: 6.48  
+- SEM-2: 6.02  
+- SEM-3: 7.80  
+- SEM-4: 7.45  
+
+## Skills
+- Cyber Security Fundamentals
+- Networking
+- Digital Forensics
+- Malware Analysis
+- Incident Response
+
+## Contact
+**Email:** [work.parthjethva@gmail.com](mailto:work.parthjethva@gmail.com)  
+**Location:** Ahmedabad, Gujarat, India  
+**LinkedIn:** [linkedin.com/in/parthjethva](https://linkedin.com/in/parthjethva)

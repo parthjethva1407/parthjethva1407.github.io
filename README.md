@@ -1,8 +1,3 @@
----
-layout: single
-author_profile: true
----
-
 ## Parth Jethva
 Cyber Security and Forensics Science | Student at Gujarat University | DFIR Intern at Heritage Cyber World
 

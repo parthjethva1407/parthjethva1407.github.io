@@ -1,9 +1,9 @@
-title: Parth Jethva's Portfolio 
-email: work.parthjethva@gmail.com
-description: Cyber Security And Forensics Science, Student At Gujarat University.
+title: "Parth Jethva's Portfolio"
+email: parthjethva1107@gmail.com
+description: "Cyber Security & Digital Forensics | M.Sc Student at Rashtriya Raksha University | DFIR Intern"
 twitter_username: parthjethva1407
 github_username: parthjethva1407
-minimal_mistakes_skin: ""
+minimal_mistakes_skin: "default"
 search: true
 
 # Build settings
@@ -13,22 +13,10 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Kolkata
 
 include:
   - _pages
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
 
 # Plugins (previously gems:)
 plugins:
@@ -42,11 +30,14 @@ plugins:
 author:
   name   : "Parth Jethva"
   avatar : "/assets/images/new.jpg"
-  bio    : "Cyber Security And Forensics Science, Student At Gujarat University."
+  bio    : "M.Sc Cyber Security & Digital Forensics (RRU) | DFIR Intern | Cyber Security & Forensics Enthusiast"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://linktr.ee/Parth_Jethva"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/parthjethva"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/parthjethva1407"
@@ -59,6 +50,9 @@ author:
 
 footer:
   links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/parthjethva"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/parthjethva1407"

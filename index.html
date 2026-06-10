@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parth Jethva — Cybersecurity Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:      #050a12;
+  --accent:  #5b9bd5;
+  --accent2: #7ec8e3;
+  --text:    #e8edf4;
+  --text2:   #8fa3b8;
+  --text3:   #4a6070;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.04);
+  --card:    rgba(255,255,255,0.03);
+  --card2:   rgba(255,255,255,0.055);
+  --sans:    'Bricolage Grotesque', sans-serif;
+  --body:    'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* GLOW BACKGROUNDS */
+.glow-hero {
+  position: fixed; top: -15%; left: 50%;
+  transform: translateX(-50%);
+  width: 1000px; height: 750px;
+  background: radial-gradient(ellipse,
+    rgba(25,75,165,0.6) 0%,
+    rgba(18,55,130,0.35) 30%,
+    rgba(10,28,70,0.15) 55%,
+    transparent 72%);
+  pointer-events: none; z-index: 0;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+.glow-mid {
+  position: absolute; top: 50%; left: 60%;
+  transform: translate(-50%,-50%);
+  width: 700px; height: 550px;
+  background: radial-gradient(ellipse, rgba(15,45,120,0.18) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+.glow-bottom {
+  position: absolute; bottom: 5%; left: 20%;
+  width: 600px; height: 450px;
+  background: radial-gradient(ellipse, rgba(20,55,130,0.2) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+
+/* NAV */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 64px; height: 72px;
+  background: rgba(5,10,18,0.75);
+  backdrop-filter: blur(28px);
+  border-bottom: 1px solid var(--border2);
+}
+.nav-logo {
+  font-family: var(--sans); font-weight:700; font-size:18px;
+  color: var(--text); text-decoration:none; letter-spacing:-0.02em;
+}
+.nav-logo span { color: var(--accent2); }
+.nav-links { display:flex; gap:40px; list-style:none; }
+.nav-links a {
+  font-size:14px; font-weight:500; color: var(--text2);
+  text-decoration:none; transition:color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-btn {
+  font-size:14px; font-weight:500; color: var(--text);
+  background: rgba(255,255,255,0.08); border:1px solid var(--border);
+  border-radius:8px; padding:9px 22px; text-decoration:none; transition:all 0.2s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.13); }
+
+/* LAYOUT */
+.section { position:relative; z-index:2; }
+.container { max-width:1100px; margin:0 auto; padding:0 64px; }
+
+/* HERO */
+#hero {
+  min-height:100vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  padding:130px 48px 100px; position:relative; z-index:2;
+}
+.hero-eyebrow {
+  font-size:13px; font-weight:500; letter-spacing:0.13em;
+  text-transform:uppercase; color: var(--accent2); margin-bottom:28px;
+}
+.hero-title {
+  font-family: var(--sans);
+  font-size: clamp(54px, 7.5vw, 100px);
+  font-weight:800; letter-spacing:-0.045em; line-height:1.0;
+  max-width:860px; margin:0 auto 28px;
+}
+.hero-title .dim { color:rgba(232,237,244,0.38); }
+.hero-desc {
+  font-size:17px; color: var(--text2); max-width:600px;
+  line-height:1.85; margin:0 auto 44px; font-weight:400;
+}
+.hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:68px; }
+.btn-p {
+  font-size:14px; font-weight:600; color:#fff;
+  background:linear-gradient(135deg,#2b6cb0,#1a4e8e);
+  border:1px solid rgba(91,155,213,0.28); border-radius:10px;
+  padding:13px 30px; text-decoration:none; transition:all 0.25s;
+  box-shadow:0 0 32px rgba(28,75,160,0.45),0 4px 20px rgba(0,0,0,0.35);
+}
+.btn-p:hover {
+  background:linear-gradient(135deg,#3578c7,#1f5da5);
+  box-shadow:0 0 52px rgba(40,95,200,0.55),0 6px 28px rgba(0,0,0,0.4);
+  transform:translateY(-1px);
+}
+.btn-g {
+  font-size:14px; font-weight:500; color: var(--text2);
+  background:transparent; border:1px solid var(--border);
+  border-radius:10px; padding:13px 30px; text-decoration:none; transition:all 0.2s;
+}
+.btn-g:hover { color:var(--text); border-color:rgba(255,255,255,0.13); background:var(--card); }
+.hero-pills { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.pill {
+  display:flex; align-items:center; gap:8px;
+  font-size:12px; font-weight:500; color: var(--text2);
+  background:var(--card); border:1px solid var(--border);
+  border-radius:100px; padding:7px 16px;
+}
+.pdot { width:6px; height:6px; border-radius:50%; background:var(--accent2); opacity:0.7; }
+.scroll-arrow {
+  position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  color:var(--text3); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+  animation:arrowfloat 2.5s ease-in-out infinite;
+}
+@keyframes arrowfloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+/* SEC TYPOGRAPHY */
+.sec-label {
+  font-size:12px; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--accent2); margin-bottom:18px;
+}
+.sec-title {
+  font-family:var(--sans); font-size:clamp(34px,4vw,56px);
+  font-weight:700; letter-spacing:-0.035em; line-height:1.08; margin-bottom:18px;
+}
+.sec-sub { font-size:16px; color:var(--text2); max-width:560px; line-height:1.8; }
+.sec-header { margin-bottom:56px; }
+
+/* CARD BASE */
+.card {
+  background:var(--card); border:1px solid var(--border); border-radius:16px;
+  transition:background 0.2s, border-color 0.2s;
+}
+.card:hover { background:var(--card2); border-color:rgba(255,255,255,0.1); }
+
+/* GRID (no gap — seamless tiles) */
+.tile-grid {
+  display:grid; gap:2px; background:var(--border2);
+  border-radius:20px; overflow:hidden;
+}
+.tile {
+  background:var(--card); padding:32px 28px; transition:background 0.2s;
+}
+.tile:hover { background:var(--card2); }
+
+/* ABOUT */
+#about { padding:100px 0; }
+.about-cols { display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start; }
+.about-copy { font-size:16px; color:var(--text2); line-height:1.88; }
+.about-copy p+p { margin-top:18px; }
+.about-copy strong { color:var(--text); font-weight:600; }
+.edu-block { background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+.edu-row { padding:26px 28px; border-bottom:1px solid var(--border2); }
+.edu-row:last-child { border-bottom:none; }
+.edu-yr { font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent2); margin-bottom:7px; }
+.edu-deg { font-family:var(--sans); font-size:16px; font-weight:600; margin-bottom:4px; line-height:1.4; }
+.edu-sch { font-size:13px; color:var(--text2); }
+.stats-bar { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--border2); margin-top:2px; border-radius:0 0 16px 16px; overflow:hidden; }
+.stat { background:var(--card); padding:24px 28px; transition:background 0.2s; }
+.stat:hover { background:var(--card2); }
+.stat-n { font-family:var(--sans); font-size:30px; font-weight:700; letter-spacing:-0.04em; margin-bottom:3px; }
+.stat-l { font-size:12px; color:var(--text2); }
+
+/* SKILLS */
+#skills { padding:100px 0; position:relative; overflow:hidden; }
+.skills-grid { grid-template-columns:repeat(3,1fr); }
+.skill-icon { font-size:24px; margin-bottom:14px; }
+.skill-name { font-family:var(--sans); font-size:15px; font-weight:600; margin-bottom:12px; }
+.tags { display:flex; flex-wrap:wrap; gap:6px; }
+.tag {
+  font-size:11px; font-weight:500; color:var(--text2);
+  background:rgba(255,255,255,0.05); border:1px solid var(--border);
+  border-radius:6px; padding:4px 10px; transition:all 0.2s;
+}
+.tile:hover .tag { border-color:rgba(91,155,213,0.2); color:rgba(232,237,244,0.85); }
+
+/* EXPERIENCE */
+#experience { padding:100px 0; }
+.exp-grid { grid-template-columns:1fr; }
+.exp-tile {
+  background:var(--card); padding:46px 52px;
+  display:grid; grid-template-columns:240px 1fr; gap:52px; align-items:start;
+  transition:background 0.2s;
+}
+.exp-tile:hover { background:var(--card2); }
+.exp-period { font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent2); margin-bottom:10px; }
+.exp-co { font-family:var(--sans); font-size:20px; font-weight:700; margin-bottom:4px; }
+.exp-loc { font-size:12px; color:var(--text3); margin-bottom:12px; }
+.exp-badge {
+  display:inline-block; font-size:11px; font-weight:600; color:var(--accent2);
+  background:rgba(91,155,213,0.07); border:1px solid rgba(91,155,213,0.18);
+  border-radius:6px; padding:4px 10px;
+}
+.exp-title { font-family:var(--sans); font-size:22px; font-weight:700; margin-bottom:18px; }
+.bullets { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.bullets li { font-size:14px; color:var(--text2); line-height:1.78; padding-left:18px; position:relative; }
+.bullets li::before { content:'–'; position:absolute; left:0; color:var(--text3); }
+
+/* PROJECTS */
+#projects { padding:100px 0; position:relative; overflow:hidden; }
+.proj-grid { grid-template-columns:repeat(2,1fr); }
+.proj-type { font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:18px; }
+.proj-title { font-family:var(--sans); font-size:24px; font-weight:700; margin-bottom:12px; letter-spacing:-0.02em; line-height:1.2; }
+.proj-desc { font-size:14px; color:var(--text2); line-height:1.8; margin-bottom:22px; }
+
+/* CERTS */
+#certifications { padding:100px 0; }
+.cert-grid { grid-template-columns:repeat(3,1fr); }
+.cert-n { font-family:var(--sans); font-size:32px; font-weight:700; color:rgba(255,255,255,0.07); margin-bottom:12px; letter-spacing:-0.04em; }
+.cert-name { font-size:14px; font-weight:600; line-height:1.45; margin-bottom:7px; }
+.cert-by { font-size:11px; color:var(--accent2); font-weight:500; }
+
+/* ACHIEVEMENTS */
+#achievements { padding:100px 0; position:relative; overflow:hidden; }
+.ach-grid { grid-template-columns:repeat(2,1fr); }
+.ach-icon { font-size:32px; margin-bottom:18px; }
+.ach-title { font-family:var(--sans); font-size:22px; font-weight:700; margin-bottom:12px; letter-spacing:-0.02em; }
+.ach-desc { font-size:14px; color:var(--text2); line-height:1.8; }
+.ach-chip {
+  display:inline-flex; align-items:center; gap:7px; margin-top:18px;
+  font-size:12px; font-weight:600; color:var(--accent2);
+  background:rgba(91,155,213,0.07); border:1px solid rgba(91,155,213,0.16);
+  border-radius:100px; padding:6px 16px;
+}
+
+/* CONTACT */
+#contact { padding:120px 0 80px; text-align:center; position:relative; overflow:hidden; }
+.contact-glow {
+  position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:900px; height:600px;
+  background:radial-gradient(ellipse,rgba(22,68,150,0.28) 0%,rgba(15,45,105,0.13) 40%,transparent 68%);
+  pointer-events:none;
+}
+.contact-inner { max-width:700px; margin:0 auto; position:relative; z-index:1; }
+.contact-inner .sec-title { margin-bottom:16px; }
+.contact-inner p { font-size:16px; color:var(--text2); line-height:1.8; margin-bottom:44px; }
+.c-email {
+  display:inline-block; font-family:var(--sans);
+  font-size:clamp(20px,3vw,34px); font-weight:700; color:var(--text);
+  text-decoration:none; letter-spacing:-0.03em; margin-bottom:40px; transition:color 0.2s;
+}
+.c-email:hover { color:var(--accent2); }
+.c-links { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.c-link {
+  display:flex; align-items:center; gap:9px; font-size:13px; font-weight:500;
+  color:var(--text2); background:var(--card); border:1px solid var(--border);
+  border-radius:10px; padding:11px 20px; text-decoration:none; transition:all 0.2s;
+}
+.c-link:hover { color:var(--text); border-color:rgba(255,255,255,0.12); background:var(--card2); }
+.c-link svg { opacity:0.55; flex-shrink:0; }
+.c-link:hover svg { opacity:1; }
+hr.div { border:none; height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); margin:72px 0 0; }
+
+/* FOOTER */
+footer {
+  position:relative; z-index:2; border-top:1px solid var(--border2);
+  padding:30px 64px; display:flex; align-items:center; justify-content:space-between;
+}
+.f-left { font-size:13px; color:var(--text3); }
+.f-right { display:flex; gap:24px; }
+.f-right a { font-size:13px; color:var(--text3); text-decoration:none; transition:color 0.2s; }
+.f-right a:hover { color:var(--text2); }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(26px); transition:opacity 0.6s ease,transform 0.6s ease; }
+.reveal.in { opacity:1; transform:none; }
+.stagger>* { opacity:0; transform:translateY(18px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.stagger.in>*:nth-child(1){opacity:1;transform:none;transition-delay:.04s}
+.stagger.in>*:nth-child(2){opacity:1;transform:none;transition-delay:.1s}
+.stagger.in>*:nth-child(3){opacity:1;transform:none;transition-delay:.16s}
+.stagger.in>*:nth-child(4){opacity:1;transform:none;transition-delay:.22s}
+.stagger.in>*:nth-child(5){opacity:1;transform:none;transition-delay:.28s}
+.stagger.in>*:nth-child(6){opacity:1;transform:none;transition-delay:.34s}
+.stagger.in>*:nth-child(7){opacity:1;transform:none;transition-delay:.4s}
+.stagger.in>*:nth-child(8){opacity:1;transform:none;transition-delay:.46s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 24px} .container{padding:0 24px} footer{padding:28px 24px;flex-direction:column;gap:14px;text-align:center}
+  .about-cols{grid-template-columns:1fr;gap:40px}
+  .exp-tile{grid-template-columns:1fr;gap:20px;padding:28px 24px}
+  .skills-grid,.cert-grid{grid-template-columns:1fr 1fr}
+  .proj-grid,.ach-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .skills-grid,.cert-grid,.stats-bar{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<div class="glow-hero"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">P<span>.</span>Jethva</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-btn" href="mailto:parthjethva1107@gmail.com">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="section">
+  <div class="hero-eyebrow">Cybersecurity Researcher</div>
+  <h1 class="hero-title">
+    Security at the<br/><span class="dim">core.</span>
+  </h1>
+  <p class="hero-desc">
+    M.Sc. in Cyber Security & Digital Forensics at RRU. Bug bounty Hall of Fame researcher, DFIR practitioner, SOC & threat intelligence builder. TryHackMe Top 1% globally.
+  </p>
+  <div class="hero-btns">
+    <a class="btn-p" href="mailto:parthjethva1107@gmail.com">Get in touch</a>
+    <a class="btn-g" href="#experience">View experience</a>
+  </div>
+  <div class="hero-pills">
+    <div class="pill"><div class="pdot"></div>DFIR Practitioner</div>
+    <div class="pill"><div class="pdot"></div>Bug Bounty HoF Researcher</div>
+    <div class="pill"><div class="pdot"></div>SOC & Threat Intel</div>
+    <div class="pill"><div class="pdot"></div>TryHackMe Top 1%</div>
+    <div class="pill"><div class="pdot"></div>Ahmedabad, India</div>
+  </div>
+  <div class="scroll-arrow">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-cols">
+      <div class="reveal">
+        <div class="sec-label">About</div>
+        <h2 class="sec-title">Defending the digital frontier.</h2>
+        <p class="sec-sub" style="margin-bottom:30px">From memory forensics to web application pentesting — I operate across the full attack surface.</p>
+        <div class="about-copy">
+          <p>I'm a cybersecurity enthusiast pursuing my <strong>M.Sc. in Cyber Security & Digital Forensics</strong> at Rashtriya Raksha University, Gandhinagar. My work spans both offensive and defensive security — web application pentesting, DFIR, SOC operations, malware analysis, and threat intelligence.</p>
+          <p>As a <strong>recognized bug bounty researcher</strong>, I've earned a financial bounty and Hall of Fame credit for responsibly disclosing a Stored XSS via File Upload vulnerability. I also build full-stack security platforms — from AI-driven threat intelligence tools to mobile forensics toolkits — and have competed in national-level cybersecurity hackathons.</p>
+          <p>Whether triage-ing alerts in a SIEM, reverse-engineering malware, or hunting for vulnerabilities in production systems, I approach every problem with methodical precision and genuine curiosity.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="edu-block">
+          <div class="edu-row">
+            <div class="edu-yr">2025 – 2027 · Pursuing</div>
+            <div class="edu-deg">M.Sc. Cyber Security &amp; Digital Forensics</div>
+            <div class="edu-sch">Rashtriya Raksha University, Gandhinagar</div>
+          </div>
+          <div class="edu-row">
+            <div class="edu-yr">2022 – 2025</div>
+            <div class="edu-deg">B.Sc. (IT) – Cyber Security &amp; Forensics</div>
+            <div class="edu-sch">Gujarat University, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="stats-bar">
+          <div class="stat"><div class="stat-n">Top 1%</div><div class="stat-l">TryHackMe Global</div></div>
+          <div class="stat"><div class="stat-n">11+</div><div class="stat-l">Certifications</div></div>
+          <div class="stat"><div class="stat-n">HoF</div><div class="stat-l">Bug Bounty + Bounty</div></div>
+          <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Security Projects</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="glow-mid"></div>
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Technical Skills</div>
+      <h2 class="sec-title">The full arsenal.</h2>
+      <p class="sec-sub">A multi-disciplinary skill set spanning offensive security, forensics, networking, and secure development.</p>
+    </div>
+    <div class="tile-grid skills-grid stagger">
+      <div class="tile">
+        <div class="skill-icon">⚔️</div>
+        <div class="skill-name">Offensive Security & VAPT</div>
+        <div class="tags"><span class="tag">Web App Pentesting</span><span class="tag">OWASP Top 10</span><span class="tag">SQL Injection</span><span class="tag">XSS</span><span class="tag">IDOR/BOLA</span><span class="tag">CSRF</span><span class="tag">LFI/RFI</span><span class="tag">Buffer Overflow</span><span class="tag">Bug Bounty</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">🔬</div>
+        <div class="skill-name">DFIR & Malware Analysis</div>
+        <div class="tags"><span class="tag">Memory Forensics</span><span class="tag">Disk Forensics</span><span class="tag">Windows Artifacts</span><span class="tag">Static Analysis</span><span class="tag">Dynamic Analysis</span><span class="tag">IOC Identification</span><span class="tag">Chain of Custody</span><span class="tag">Log Analysis</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">📡</div>
+        <div class="skill-name">SOC & Threat Intelligence</div>
+        <div class="tags"><span class="tag">Splunk (SIEM)</span><span class="tag">Alert Triage</span><span class="tag">C2 Detection</span><span class="tag">Threat Hunting</span><span class="tag">OSINT</span><span class="tag">MITRE ATT&CK</span><span class="tag">CVE/NVD Analysis</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">Network Security</div>
+        <div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">HTTP/S</span><span class="tag">Wireshark</span><span class="tag">Nmap</span><span class="tag">Firewall/IDS/IPS</span><span class="tag">VLAN</span><span class="tag">OSPF</span><span class="tag">ARP Spoofing</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">🛠️</div>
+        <div class="skill-name">Security Tools</div>
+        <div class="tags"><span class="tag">Burp Suite</span><span class="tag">Metasploit</span><span class="tag">Nessus</span><span class="tag">SQLmap</span><span class="tag">Nuclei</span><span class="tag">Subfinder</span><span class="tag">Dalfox</span><span class="tag">Autopsy</span><span class="tag">FTK Imager</span><span class="tag">Volatility</span><span class="tag">x64dbg</span><span class="tag">Wazuh</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name">Programming & Platforms</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">C/C++</span><span class="tag">Assembly x86/x64</span><span class="tag">Kali Linux</span><span class="tag">Ubuntu</span><span class="tag">Windows Server</span><span class="tag">AWS</span><span class="tag">Hack The Box</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Experience</div>
+      <h2 class="sec-title">Field operations.</h2>
+      <p class="sec-sub">Real-world security work across bug bounty research and digital forensics & incident response.</p>
+    </div>
+    <div class="tile-grid exp-grid stagger">
+      <div class="exp-tile">
+        <div>
+          <div class="exp-period">2025 – Present</div>
+          <div class="exp-co">Independent</div>
+          <div class="exp-loc">Remote · Ahmedabad, India</div>
+          <div class="exp-badge">Security Researcher</div>
+        </div>
+        <div>
+          <div class="exp-title">Bug Bounty & Security Research</div>
+          <ul class="bullets">
+            <li>Identified and responsibly disclosed a <strong style="color:var(--text)">Stored XSS via File Upload</strong> vulnerability, earning a financial bounty award and <strong style="color:var(--text)">Hall of Fame recognition</strong> from RepAutomate (2026).</li>
+            <li>Performed OWASP Top 10 assessments covering SQL Injection, IDOR, CSRF, and broken authentication across live production targets; documented findings in structured disclosure reports.</li>
+            <li>Built custom Bash automation scripts for subdomain enumeration, S3 bucket analysis, and JS bundle analysis to accelerate recon pipelines across bug bounty programs.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-tile">
+        <div>
+          <div class="exp-period">Jan 2025 – Mar 2025</div>
+          <div class="exp-co">Heritage Cyber World</div>
+          <div class="exp-loc">Ahmedabad, Gujarat</div>
+          <div class="exp-badge">DFIR Intern</div>
+        </div>
+        <div>
+          <div class="exp-title">Digital Forensics & Incident Response</div>
+          <ul class="bullets">
+            <li>Conducted forensic investigations of memory, disk, and network artifacts using <strong style="color:var(--text)">Volatility</strong>, <strong style="color:var(--text)">FTK Imager</strong>, and <strong style="color:var(--text)">Autopsy</strong> to reconstruct adversary timelines and identify compromised systems.</li>
+            <li>Analyzed system/application event logs, registry artifacts, and network traffic captures to detect C2 beaconing, lateral movement, and persistence mechanisms.</li>
+            <li>Supported incident triage workflows — evidence preservation, chain of custody documentation, and stakeholder-ready investigation reports.</li>
+            <li>Performed live RAM capture, disk imaging with write-blockers, and applied Wireshark for deep-packet inspection of suspicious network sessions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="glow-bottom"></div>
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Projects</div>
+      <h2 class="sec-title">What I've built.</h2>
+      <p class="sec-sub">Hands-on security engineering — from SIEM deployments to IoT encryption frameworks.</p>
+    </div>
+    <div class="tile-grid proj-grid stagger">
+      <div class="tile" style="padding:40px 36px">
+        <div class="proj-type">Home Lab · SIEM & Monitoring</div>
+        <div class="proj-title">Wazuh SIEM & File Integrity Monitoring</div>
+        <p class="proj-desc">Deployed a full Wazuh SIEM environment on Ubuntu (VirtualBox) with a bridged-adapter network, connecting a Windows 11 host as a monitored agent. Configured <strong style="color:var(--text)">File Integrity Monitoring (FIM)</strong> via Syscheck — editing ossec.conf for real-time directory monitoring and verifying file creation, modification, and deletion alerts in the Wazuh dashboard.</p>
+        <div class="tags"><span class="tag">Wazuh 4.12</span><span class="tag">Ubuntu Server 22.04</span><span class="tag">Windows 11</span><span class="tag">FIM / Syscheck</span><span class="tag">SIEM</span><span class="tag">VirtualBox</span><span class="tag">Alert Triage</span></div>
+      </div>
+      <div class="tile" style="padding:40px 36px">
+        <div class="proj-type">Bachelor's Capstone · 2024–2025</div>
+        <div class="proj-title">Secure MQTT Broker — IoT Encryption Framework</div>
+        <p class="proj-desc">Designed a secure IoT communication framework on ESP32 implementing <strong style="color:var(--text)">AES-256</strong> and <strong style="color:var(--text)">ChaCha20</strong> encryption for MQTT payloads. Evaluated confidentiality, transmission overhead, and battery impact across both ciphers in constrained environments — producing full architecture diagrams, protocol flow documentation, and a comparative cryptographic findings report.</p>
+        <div class="tags"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">AES-256</span><span class="tag">ChaCha20</span><span class="tag">IoT Security</span><span class="tag">Arduino/C++</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Certifications</div>
+      <h2 class="sec-title">Verified expertise.</h2>
+      <p class="sec-sub">Formal certifications across networking, forensics, SOC operations, threat hunting, and vulnerability management.</p>
+    </div>
+    <div class="tile-grid cert-grid stagger">
+      <div class="tile"><div class="cert-n">01</div><div class="cert-name">CCNA: Enterprise Networking, Security & Automation</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">02</div><div class="cert-name">CCNA: Switching, Routing & Wireless Essentials</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">03</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">04</div><div class="cert-name">Blue Team Junior Analyst (BTJA) Pathway Bundle</div><div class="cert-by">Security Blue Team · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">05</div><div class="cert-name">Intro to Splunk (eLearning)</div><div class="cert-by">Splunk · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">06</div><div class="cert-name">Advent of Cyber 2025</div><div class="cert-by">TryHackMe · Dec 2025</div></div>
+      <div class="tile"><div class="cert-n">07</div><div class="cert-name">OSForensics Triage Certification (OSFTC)</div><div class="cert-by">PassMark Software · Feb 2025</div></div>
+      <div class="tile"><div class="cert-n">08</div><div class="cert-name">Windows Forensics</div><div class="cert-by">Belkasoft · Feb 2025</div></div>
+      <div class="tile"><div class="cert-n">09</div><div class="cert-name">Vulnerability Management Foundation</div><div class="cert-by">Qualys · Jan 2024</div></div>
+      <div class="tile"><div class="cert-n">10</div><div class="cert-name">FCF – Getting Started in Cybersecurity 2.0 & Threat Landscape 2.0</div><div class="cert-by">Fortinet Training Institute · 2024</div></div>
+      <div class="tile"><div class="cert-n">11</div><div class="cert-name">Intro to DFIR: The Divide and Conquer Process</div><div class="cert-by">Cyber Triage · Sep 2023</div></div>
+      <div class="tile" style="background:rgba(91,155,213,0.04);">
+        <div class="cert-n" style="color:rgba(91,155,213,0.25)">+</div>
+        <div class="cert-name" style="color:var(--text2);font-weight:400">Continuously expanding — new certifications in progress</div>
+        <div class="cert-by">Ongoing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section">
+  <div class="glow-mid" style="left:35%;top:40%"></div>
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Achievements</div>
+      <h2 class="sec-title">Recognized impact.</h2>
+    </div>
+    <div class="tile-grid ach-grid stagger">
+      <div class="tile" style="padding:44px 40px">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-title">Bug Bounty Hall of Fame</div>
+        <p class="ach-desc">Received a financial bounty and <strong style="color:var(--text)">public Hall of Fame credit from RepAutomate (2026)</strong> for the responsible disclosure of a critical Stored XSS via File Upload vulnerability in a production web application. Coordinated full remediation directly with the security team.</p>
+        <div class="ach-chip">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Financial Bounty + Hall of Fame
+        </div>
+      </div>
+      <div class="tile" style="padding:44px 40px">
+        <div class="ach-icon">🌐</div>
+        <div class="ach-title">TryHackMe — Top 1% Global</div>
+        <p class="ach-desc">Consistently ranked in the <strong style="color:var(--text)">top 1% of users worldwide</strong> on TryHackMe across practical cybersecurity labs, CTFs, and hands-on challenge rooms — covering exploitation, privilege escalation, web security, forensics, and OSINT.</p>
+        <div class="ach-chip">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Top 1% Global Ranking
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="contact-glow"></div>
+  <div class="container">
+    <div class="contact-inner reveal">
+      <div class="sec-label">Contact</div>
+      <h2 class="sec-title">Let's build something secure.</h2>
+      <p>Open to cybersecurity internships, research collaborations, bug bounty work, and full-time opportunities. Let's connect.</p>
+      <a class="c-email" href="mailto:parthjethva1107@gmail.com">parthjethva1107@gmail.com</a>
+      <div class="c-links">
+        <a class="c-link" href="https://linkedin.com/in/parthjethva" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="c-link" href="https://github.com/parthjethva1407" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a class="c-link" href="https://tryhackme.com/p/parthjethva1107" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          TryHackMe
+        </a>
+        <a class="c-link" href="tel:+919510844143">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.1 14.72a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +91 95108 44143
+        </a>
+      </div>
+    </div>
+    <hr class="div"/>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-left">© 2026 Parth Jethva · Ahmedabad, Gujarat, India</div>
+  <div class="f-right">
+    <a href="mailto:parthjethva1107@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/parthjethva" target="_blank">LinkedIn</a>
+    <a href="https://github.com/parthjethva1407" target="_blank">GitHub</a>
+    <a href="https://tryhackme.com/p/parthjethva1107" target="_blank">TryHackMe</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => {
+    e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('in'); obs.unobserve(x.target); }});
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal,.stagger').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

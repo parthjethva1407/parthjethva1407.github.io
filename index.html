@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Parth Jethva — Cybersecurity Researcher</title>
+<meta name="description" content="Parth Jethva — M.Sc. Cyber Security & Digital Forensics at Rashtriya Raksha University. DFIR, SOC & threat intelligence, VAPT and bug bounty. Bug Bounty Hall of Fame, TryHackMe Top 1%."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -189,6 +190,7 @@ nav {
 .edu-yr { font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent2); margin-bottom:7px; }
 .edu-deg { font-family:var(--sans); font-size:16px; font-weight:600; margin-bottom:4px; line-height:1.4; }
 .edu-sch { font-size:13px; color:var(--text2); }
+.edu-meta { font-size:12px; color:var(--text3); margin-top:8px; line-height:1.6; }
 .stats-bar { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--border2); margin-top:2px; border-radius:0 0 16px 16px; overflow:hidden; }
 .stat { background:var(--card); padding:24px 28px; transition:background 0.2s; }
 .stat:hover { background:var(--card2); }
@@ -307,6 +309,16 @@ footer {
 .stagger.in>*:nth-child(6){opacity:1;transform:none;transition-delay:.34s}
 .stagger.in>*:nth-child(7){opacity:1;transform:none;transition-delay:.4s}
 .stagger.in>*:nth-child(8){opacity:1;transform:none;transition-delay:.46s}
+.stagger.in>*:nth-child(n+9){opacity:1;transform:none;transition-delay:.5s}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.stagger>*{opacity:1;transform:none;transition:none}
+  .scroll-arrow{animation:none}
+}
+
+/* ODD-COUNT GRIDS: let the last tile fill the row (desktop only) */
+@media(min-width:961px){
+  .skills-grid .tile:last-child,.proj-grid .tile:last-child{grid-column:span 2}
+}
 
 /* RESPONSIVE */
 @media(max-width:960px){
@@ -348,7 +360,7 @@ footer {
     Security at the<br/><span class="dim">core.</span>
   </h1>
   <p class="hero-desc">
-    M.Sc. in Cyber Security & Digital Forensics at RRU. Bug bounty Hall of Fame researcher, DFIR practitioner, SOC & threat intelligence builder. TryHackMe Top 1% globally.
+    M.Sc. in Cyber Security & Digital Forensics at RRU. DFIR practitioner, SOC & threat intelligence builder, and bug bounty Hall of Fame researcher. TryHackMe Top 1% globally.
   </p>
   <div class="hero-btns">
     <a class="btn-p" href="mailto:parthjethva1107@gmail.com">Get in touch</a>
@@ -356,8 +368,8 @@ footer {
   </div>
   <div class="hero-pills">
     <div class="pill"><div class="pdot"></div>DFIR Practitioner</div>
-    <div class="pill"><div class="pdot"></div>Bug Bounty HoF Researcher</div>
     <div class="pill"><div class="pdot"></div>SOC & Threat Intel</div>
+    <div class="pill"><div class="pdot"></div>Bug Bounty HoF Researcher</div>
     <div class="pill"><div class="pdot"></div>TryHackMe Top 1%</div>
     <div class="pill"><div class="pdot"></div>Ahmedabad, India</div>
   </div>
@@ -374,11 +386,11 @@ footer {
       <div class="reveal">
         <div class="sec-label">About</div>
         <h2 class="sec-title">Defending the digital frontier.</h2>
-        <p class="sec-sub" style="margin-bottom:30px">From memory forensics to web application pentesting — I operate across the full attack surface.</p>
+        <p class="sec-sub" style="margin-bottom:30px">From memory forensics to SIEM monitoring to web application pentesting — I work across both sides of security.</p>
         <div class="about-copy">
-          <p>I'm a cybersecurity enthusiast pursuing my <strong>M.Sc. in Cyber Security & Digital Forensics</strong> at Rashtriya Raksha University, Gandhinagar. My work spans both offensive and defensive security — web application pentesting, DFIR, SOC operations, malware analysis, and threat intelligence.</p>
-          <p>As a <strong>recognized bug bounty researcher</strong>, I've earned a financial bounty and Hall of Fame credit for responsibly disclosing a Stored XSS via File Upload vulnerability. I also build full-stack security platforms — from AI-driven threat intelligence tools to mobile forensics toolkits — and have competed in national-level cybersecurity hackathons.</p>
-          <p>Whether triage-ing alerts in a SIEM, reverse-engineering malware, or hunting for vulnerabilities in production systems, I approach every problem with methodical precision and genuine curiosity.</p>
+          <p>I'm pursuing my <strong>M.Sc. in Cyber Security & Digital Forensics</strong> at Rashtriya Raksha University, Gandhinagar. My work spans digital forensics and incident response, SOC operations, threat intelligence, malware analysis, and offensive security.</p>
+          <p>As a <strong>bug bounty researcher</strong>, I earned a financial bounty and Hall of Fame recognition from RepAutomate for responsibly disclosing a Stored XSS via File Upload vulnerability. I also build home labs and security tooling, from a Wazuh SIEM with file integrity monitoring to an AI-assisted SOC triage pipeline.</p>
+          <p>I've supported the White Team at an international cyber defence symposium, volunteered at a 7-day cyber security awareness event, and I write up every investigation and finding in structured, stakeholder-ready reports.</p>
         </div>
       </div>
       <div class="reveal">
@@ -387,18 +399,20 @@ footer {
             <div class="edu-yr">2025 – 2027 · Pursuing</div>
             <div class="edu-deg">M.Sc. Cyber Security &amp; Digital Forensics</div>
             <div class="edu-sch">Rashtriya Raksha University, Gandhinagar</div>
+            <div class="edu-meta">SEM 1 CGPA 8.33 · SEM 2 CGPA 8.83<br/>DFIR, Reverse Engineering &amp; Malware Analysis, Network Security, Ethical Hacking, SOC, Web App &amp; Penetration Testing, ISO 27001, ISO 22301</div>
           </div>
           <div class="edu-row">
-            <div class="edu-yr">2022 – 2025</div>
+            <div class="edu-yr">2022 – 2025 · Graduated</div>
             <div class="edu-deg">B.Sc. (IT) – Cyber Security &amp; Forensics</div>
-            <div class="edu-sch">Gujarat University, Ahmedabad</div>
+            <div class="edu-sch">DBFS, Gujarat University, Ahmedabad</div>
+            <div class="edu-meta">Windows Forensics, Mobile Forensics, Cyber Law, Vulnerability Assessment, OSINT, Penetration Testing, Cryptography</div>
           </div>
         </div>
         <div class="stats-bar">
           <div class="stat"><div class="stat-n">Top 1%</div><div class="stat-l">TryHackMe Global</div></div>
-          <div class="stat"><div class="stat-n">11+</div><div class="stat-l">Certifications</div></div>
+          <div class="stat"><div class="stat-n">12</div><div class="stat-l">Certifications</div></div>
           <div class="stat"><div class="stat-n">HoF</div><div class="stat-l">Bug Bounty + Bounty</div></div>
-          <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Security Projects</div></div>
+          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Security Projects</div></div>
         </div>
       </div>
     </div>
@@ -412,38 +426,48 @@ footer {
     <div class="sec-header reveal">
       <div class="sec-label">Technical Skills</div>
       <h2 class="sec-title">The full arsenal.</h2>
-      <p class="sec-sub">A multi-disciplinary skill set spanning offensive security, forensics, networking, and secure development.</p>
+      <p class="sec-sub">A multi-disciplinary skill set spanning forensics, SOC operations, offensive security, compliance, and networking.</p>
     </div>
     <div class="tile-grid skills-grid stagger">
       <div class="tile">
-        <div class="skill-icon">⚔️</div>
-        <div class="skill-name">Offensive Security & VAPT</div>
-        <div class="tags"><span class="tag">Web App Pentesting</span><span class="tag">OWASP Top 10</span><span class="tag">SQL Injection</span><span class="tag">XSS</span><span class="tag">IDOR/BOLA</span><span class="tag">CSRF</span><span class="tag">LFI/RFI</span><span class="tag">Buffer Overflow</span><span class="tag">Bug Bounty</span></div>
-      </div>
-      <div class="tile">
         <div class="skill-icon">🔬</div>
         <div class="skill-name">DFIR & Malware Analysis</div>
-        <div class="tags"><span class="tag">Memory Forensics</span><span class="tag">Disk Forensics</span><span class="tag">Windows Artifacts</span><span class="tag">Static Analysis</span><span class="tag">Dynamic Analysis</span><span class="tag">IOC Identification</span><span class="tag">Chain of Custody</span><span class="tag">Log Analysis</span></div>
+        <div class="tags"><span class="tag">Memory Forensics</span><span class="tag">Disk Forensics</span><span class="tag">Forensic Imaging</span><span class="tag">Windows Artifacts</span><span class="tag">Timeline Reconstruction</span><span class="tag">Static Analysis</span><span class="tag">Dynamic Analysis</span><span class="tag">Reverse Engineering</span><span class="tag">IOC Identification</span><span class="tag">Chain of Custody</span><span class="tag">Forensic Reporting</span><span class="tag">Log Analysis</span></div>
       </div>
       <div class="tile">
         <div class="skill-icon">📡</div>
         <div class="skill-name">SOC & Threat Intelligence</div>
-        <div class="tags"><span class="tag">Splunk (SIEM)</span><span class="tag">Alert Triage</span><span class="tag">C2 Detection</span><span class="tag">Threat Hunting</span><span class="tag">OSINT</span><span class="tag">MITRE ATT&CK</span><span class="tag">CVE/NVD Analysis</span></div>
+        <div class="tags"><span class="tag">Splunk</span><span class="tag">Wazuh</span><span class="tag">Alert Triage</span><span class="tag">File Integrity Monitoring</span><span class="tag">C2 Beaconing Detection</span><span class="tag">Threat Hunting</span><span class="tag">Incident Response</span><span class="tag">OSINT</span><span class="tag">MITRE ATT&CK</span><span class="tag">CVE/NVD Analysis</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">⚔️</div>
+        <div class="skill-name">Offensive Security & VAPT</div>
+        <div class="tags"><span class="tag">Web App Testing</span><span class="tag">Vulnerability Assessment</span><span class="tag">OWASP Top 10</span><span class="tag">SQL Injection</span><span class="tag">Stored/Reflected XSS</span><span class="tag">IDOR</span><span class="tag">CSRF</span><span class="tag">LFI/RFI</span><span class="tag">Buffer Overflow</span><span class="tag">OS Command Injection</span><span class="tag">Recon &amp; Enumeration</span><span class="tag">Bug Bounty</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">📋</div>
+        <div class="skill-name">Governance, Risk & Compliance</div>
+        <div class="tags"><span class="tag">ISO 27001 (ISMS)</span><span class="tag">ISO 22301 (BCMS)</span><span class="tag">Risk Assessment</span><span class="tag">Vulnerability Management</span><span class="tag">Qualys</span><span class="tag">Nessus</span><span class="tag">Cyber Law</span><span class="tag">Security Documentation</span><span class="tag">Responsible Disclosure</span></div>
       </div>
       <div class="tile">
         <div class="skill-icon">🌐</div>
         <div class="skill-name">Network Security</div>
-        <div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">HTTP/S</span><span class="tag">Wireshark</span><span class="tag">Nmap</span><span class="tag">Firewall/IDS/IPS</span><span class="tag">VLAN</span><span class="tag">OSPF</span><span class="tag">ARP Spoofing</span></div>
+        <div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">HTTP/S</span><span class="tag">Wireshark</span><span class="tag">tcpdump</span><span class="tag">Nmap</span><span class="tag">Firewall/IDS/IPS</span><span class="tag">VLAN</span><span class="tag">OSPF</span><span class="tag">EIGRP</span><span class="tag">Cisco Packet Tracer</span><span class="tag">ARP Spoofing</span></div>
       </div>
       <div class="tile">
         <div class="skill-icon">🛠️</div>
         <div class="skill-name">Security Tools</div>
-        <div class="tags"><span class="tag">Burp Suite</span><span class="tag">Metasploit</span><span class="tag">Nessus</span><span class="tag">SQLmap</span><span class="tag">Nuclei</span><span class="tag">Subfinder</span><span class="tag">Dalfox</span><span class="tag">Autopsy</span><span class="tag">FTK Imager</span><span class="tag">Volatility</span><span class="tag">x64dbg</span><span class="tag">Wazuh</span></div>
+        <div class="tags"><span class="tag">Autopsy</span><span class="tag">FTK Imager</span><span class="tag">Volatility</span><span class="tag">OSForensics</span><span class="tag">Belkasoft</span><span class="tag">x64dbg</span><span class="tag">FakeNet-NG</span><span class="tag">Regshot</span><span class="tag">ProcMon</span><span class="tag">Burp Suite</span><span class="tag">Metasploit</span><span class="tag">SQLmap</span><span class="tag">Nuclei</span><span class="tag">Subfinder</span><span class="tag">Httpx</span><span class="tag">Naabu</span><span class="tag">Dalfox</span></div>
       </div>
       <div class="tile">
         <div class="skill-icon">💻</div>
-        <div class="skill-name">Programming & Platforms</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">C/C++</span><span class="tag">Assembly x86/x64</span><span class="tag">Kali Linux</span><span class="tag">Ubuntu</span><span class="tag">Windows Server</span><span class="tag">AWS</span><span class="tag">Hack The Box</span></div>
+        <div class="skill-name">Programming & Operating Systems</div>
+        <div class="tags"><span class="tag">Python (security automation)</span><span class="tag">Bash</span><span class="tag">C/C++ (basic)</span><span class="tag">Assembly x86/x64 (basic)</span><span class="tag">Windows 10/11</span><span class="tag">Windows Server</span><span class="tag">Ubuntu</span><span class="tag">Kali Linux</span></div>
+      </div>
+      <div class="tile">
+        <div class="skill-icon">🎯</div>
+        <div class="skill-name">Platforms & Practice</div>
+        <div class="tags"><span class="tag">AWS (EC2, S3)</span><span class="tag">TryHackMe (Top 1%)</span><span class="tag">Hack The Box</span><span class="tag">Pwnedlabs</span><span class="tag">PicoCTF</span><span class="tag">PortSwigger</span></div>
       </div>
     </div>
   </div>
@@ -455,39 +479,38 @@ footer {
     <div class="sec-header reveal">
       <div class="sec-label">Experience</div>
       <h2 class="sec-title">Field operations.</h2>
-      <p class="sec-sub">Real-world security work across bug bounty research and digital forensics & incident response.</p>
+      <p class="sec-sub">Real-world security work across digital forensics &amp; incident response, vulnerability assessment, and bug bounty research.</p>
     </div>
     <div class="tile-grid exp-grid stagger">
       <div class="exp-tile">
         <div>
-          <div class="exp-period">2025 – Present</div>
-          <div class="exp-co">Independent</div>
-          <div class="exp-loc">Remote · Ahmedabad, India</div>
-          <div class="exp-badge">Security Researcher</div>
-        </div>
-        <div>
-          <div class="exp-title">Bug Bounty & Security Research</div>
-          <ul class="bullets">
-            <li>Identified and responsibly disclosed a <strong style="color:var(--text)">Stored XSS via File Upload</strong> vulnerability, earning a financial bounty award and <strong style="color:var(--text)">Hall of Fame recognition</strong> from RepAutomate (2026).</li>
-            <li>Performed OWASP Top 10 assessments covering SQL Injection, IDOR, CSRF, and broken authentication across live production targets; documented findings in structured disclosure reports.</li>
-            <li>Built custom Bash automation scripts for subdomain enumeration, S3 bucket analysis, and JS bundle analysis to accelerate recon pipelines across bug bounty programs.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp-tile">
-        <div>
           <div class="exp-period">Jan 2025 – Mar 2025</div>
           <div class="exp-co">Heritage Cyber World</div>
-          <div class="exp-loc">Ahmedabad, Gujarat</div>
+          <div class="exp-loc">Ahmedabad, India</div>
           <div class="exp-badge">DFIR Intern</div>
         </div>
         <div>
           <div class="exp-title">Digital Forensics & Incident Response</div>
           <ul class="bullets">
-            <li>Conducted forensic investigations of memory, disk, and network artifacts using <strong style="color:var(--text)">Volatility</strong>, <strong style="color:var(--text)">FTK Imager</strong>, and <strong style="color:var(--text)">Autopsy</strong> to reconstruct adversary timelines and identify compromised systems.</li>
-            <li>Analyzed system/application event logs, registry artifacts, and network traffic captures to detect C2 beaconing, lateral movement, and persistence mechanisms.</li>
-            <li>Supported incident triage workflows — evidence preservation, chain of custody documentation, and stakeholder-ready investigation reports.</li>
-            <li>Performed live RAM capture, disk imaging with write-blockers, and applied Wireshark for deep-packet inspection of suspicious network sessions.</li>
+            <li>Performed live and static forensic data acquisition (RAM capture, disk imaging with write-blockers) to preserve evidence integrity, and investigated memory, disk, and network artifacts using <strong style="color:var(--text)">Volatility</strong>, <strong style="color:var(--text)">FTK Imager</strong>, and <strong style="color:var(--text)">Autopsy</strong> to reconstruct adversary timelines and identify compromised systems.</li>
+            <li>Maintained evidence preservation and chain of custody documentation, and prepared structured investigation reports for stakeholder review while supporting incident response and triage workflows.</li>
+            <li>Analyzed system and application event logs, registry artifacts, and network traffic captures (Wireshark deep-packet inspection) to hunt for and detect C2 beaconing, lateral movement, and persistence mechanisms.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-tile">
+        <div>
+          <div class="exp-period">2025 – Present</div>
+          <div class="exp-co">Independent</div>
+          <div class="exp-loc">Ahmedabad, India</div>
+          <div class="exp-badge">Security Researcher</div>
+        </div>
+        <div>
+          <div class="exp-title">Vulnerability Assessment, Penetration Testing & Bug Bounty</div>
+          <ul class="bullets">
+            <li>Identified and responsibly disclosed a <strong style="color:var(--text)">Stored XSS via File Upload</strong> vulnerability, earning a financial bug bounty award and <strong style="color:var(--text)">Hall of Fame recognition</strong> from RepAutomate (2026).</li>
+            <li>Performed vulnerability assessments and penetration tests against the OWASP Top 10, covering SQL Injection, IDOR, CSRF, and broken authentication; documented technical findings, impact, and remediation recommendations in structured disclosure reports.</li>
+            <li>Developed custom Bash automation scripts (subdomain enumeration, S3 bucket analysis, JS analysis) to accelerate recon workflows across bug bounty programs.</li>
           </ul>
         </div>
       </div>
@@ -502,19 +525,25 @@ footer {
     <div class="sec-header reveal">
       <div class="sec-label">Projects</div>
       <h2 class="sec-title">What I've built.</h2>
-      <p class="sec-sub">Hands-on security engineering — from SIEM deployments to IoT encryption frameworks.</p>
+      <p class="sec-sub">Hands-on security engineering — from SOC automation and SIEM deployments to IoT encryption.</p>
     </div>
     <div class="tile-grid proj-grid stagger">
       <div class="tile" style="padding:40px 36px">
-        <div class="proj-type">Home Lab · SIEM & Monitoring</div>
+        <div class="proj-type">Home Lab · SOC Automation · Jun 2026</div>
+        <div class="proj-title">AI-Powered SOC Analyst Home Lab</div>
+        <p class="proj-desc">Built an autonomous threat detection pipeline on Kali Linux using <strong style="color:var(--text)">tshark</strong> for live ICMP capture, <strong style="color:var(--text)">Python</strong> for IP anomaly detection, and structured JSON alert generation. Integrated it with a published <strong style="color:var(--text)">Airia AI</strong> agent via REST API for real-time automated triage.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">tshark</span><span class="tag">Airia AI</span><span class="tag">REST API</span><span class="tag">Kali Linux</span><span class="tag">Alert Triage</span></div>
+      </div>
+      <div class="tile" style="padding:40px 36px">
+        <div class="proj-type">Home Lab · SIEM & Monitoring · Jun 2026</div>
         <div class="proj-title">Wazuh SIEM & File Integrity Monitoring</div>
-        <p class="proj-desc">Deployed a full Wazuh SIEM environment on Ubuntu (VirtualBox) with a bridged-adapter network, connecting a Windows 11 host as a monitored agent. Configured <strong style="color:var(--text)">File Integrity Monitoring (FIM)</strong> via Syscheck — editing ossec.conf for real-time directory monitoring and verifying file creation, modification, and deletion alerts in the Wazuh dashboard.</p>
-        <div class="tags"><span class="tag">Wazuh 4.12</span><span class="tag">Ubuntu Server 22.04</span><span class="tag">Windows 11</span><span class="tag">FIM / Syscheck</span><span class="tag">SIEM</span><span class="tag">VirtualBox</span><span class="tag">Alert Triage</span></div>
+        <p class="proj-desc">Deployed a full Wazuh SIEM environment on Ubuntu (VirtualBox) with a bridged-adapter network, using the automated installer for the Wazuh Manager (indexer + dashboard) and connecting a Windows host as a monitored agent. Configured <strong style="color:var(--text)">File Integrity Monitoring (FIM)</strong> via Syscheck — editing ossec.conf for real-time directory monitoring and verifying file creation, modification, and deletion alerts in the dashboard.</p>
+        <div class="tags"><span class="tag">Wazuh 4.12</span><span class="tag">Ubuntu Server 22.04</span><span class="tag">Windows 11</span><span class="tag">FIM / Syscheck</span><span class="tag">SIEM</span><span class="tag">VirtualBox</span></div>
       </div>
       <div class="tile" style="padding:40px 36px">
         <div class="proj-type">Bachelor's Capstone · 2024–2025</div>
         <div class="proj-title">Secure MQTT Broker — IoT Encryption Framework</div>
-        <p class="proj-desc">Designed a secure IoT communication framework on ESP32 implementing <strong style="color:var(--text)">AES-256</strong> and <strong style="color:var(--text)">ChaCha20</strong> encryption for MQTT payloads. Evaluated confidentiality, transmission overhead, and battery impact across both ciphers in constrained environments — producing full architecture diagrams, protocol flow documentation, and a comparative cryptographic findings report.</p>
+        <p class="proj-desc">Designed a secure IoT communication framework on ESP32 implementing <strong style="color:var(--text)">AES-256</strong> and <strong style="color:var(--text)">ChaCha20</strong> encryption for MQTT message payloads. Evaluated confidentiality, transmission overhead, and battery impact across both ciphers in constrained environments, and produced full architecture diagrams, protocol flow documentation, and a comparative cryptographic findings report.</p>
         <div class="tags"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">AES-256</span><span class="tag">ChaCha20</span><span class="tag">IoT Security</span><span class="tag">Arduino/C++</span></div>
       </div>
     </div>
@@ -527,25 +556,21 @@ footer {
     <div class="sec-header reveal">
       <div class="sec-label">Certifications</div>
       <h2 class="sec-title">Verified expertise.</h2>
-      <p class="sec-sub">Formal certifications across networking, forensics, SOC operations, threat hunting, and vulnerability management.</p>
+      <p class="sec-sub">Formal certifications across AI security, threat intelligence, networking, forensics, SOC operations, and vulnerability management.</p>
     </div>
     <div class="tile-grid cert-grid stagger">
-      <div class="tile"><div class="cert-n">01</div><div class="cert-name">CCNA: Enterprise Networking, Security & Automation</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
-      <div class="tile"><div class="cert-n">02</div><div class="cert-name">CCNA: Switching, Routing & Wireless Essentials</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
-      <div class="tile"><div class="cert-n">03</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
-      <div class="tile"><div class="cert-n">04</div><div class="cert-name">Blue Team Junior Analyst (BTJA) Pathway Bundle</div><div class="cert-by">Security Blue Team · Jun 2026</div></div>
-      <div class="tile"><div class="cert-n">05</div><div class="cert-name">Intro to Splunk (eLearning)</div><div class="cert-by">Splunk · Jun 2026</div></div>
-      <div class="tile"><div class="cert-n">06</div><div class="cert-name">Advent of Cyber 2025</div><div class="cert-by">TryHackMe · Dec 2025</div></div>
-      <div class="tile"><div class="cert-n">07</div><div class="cert-name">OSForensics Triage Certification (OSFTC)</div><div class="cert-by">PassMark Software · Feb 2025</div></div>
-      <div class="tile"><div class="cert-n">08</div><div class="cert-name">Windows Forensics</div><div class="cert-by">Belkasoft · Feb 2025</div></div>
-      <div class="tile"><div class="cert-n">09</div><div class="cert-name">Vulnerability Management Foundation</div><div class="cert-by">Qualys · Jan 2024</div></div>
-      <div class="tile"><div class="cert-n">10</div><div class="cert-name">FCF – Getting Started in Cybersecurity 2.0 & Threat Landscape 2.0</div><div class="cert-by">Fortinet Training Institute · 2024</div></div>
-      <div class="tile"><div class="cert-n">11</div><div class="cert-name">Intro to DFIR: The Divide and Conquer Process</div><div class="cert-by">Cyber Triage · Sep 2023</div></div>
-      <div class="tile" style="background:rgba(91,155,213,0.04);">
-        <div class="cert-n" style="color:rgba(91,155,213,0.25)">+</div>
-        <div class="cert-name" style="color:var(--text2);font-weight:400">Continuously expanding — new certifications in progress</div>
-        <div class="cert-by">Ongoing</div>
-      </div>
+      <div class="tile"><div class="cert-n">01</div><div class="cert-name">AI+ Security™</div><div class="cert-by">AI CERTs · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">02</div><div class="cert-name">Cyber Threat Intelligence 101 (Foundation Level Threat Intelligence Analyst)</div><div class="cert-by">arcX · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">03</div><div class="cert-name">Blue Team Junior Analyst (BTJA) Pathway Bundle</div><div class="cert-by">Security Blue Team · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">04</div><div class="cert-name">CCNA: Enterprise Networking, Security & Automation</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">05</div><div class="cert-name">CCNA: Switching, Routing & Wireless Essentials</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">06</div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-by">Cisco Networking Academy · via RRU · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">07</div><div class="cert-name">Intro to Splunk (eLearning)</div><div class="cert-by">Splunk · Jun 2026</div></div>
+      <div class="tile"><div class="cert-n">08</div><div class="cert-name">OSForensics Triage Certification (OSFTC)</div><div class="cert-by">PassMark Software · Feb 2025</div></div>
+      <div class="tile"><div class="cert-n">09</div><div class="cert-name">Windows Forensics with Belkasoft</div><div class="cert-by">Belkasoft · Feb 2025</div></div>
+      <div class="tile"><div class="cert-n">10</div><div class="cert-name">Vulnerability Management Foundation</div><div class="cert-by">Qualys · Jan 2024</div></div>
+      <div class="tile"><div class="cert-n">11</div><div class="cert-name">FCF – Getting Started in Cybersecurity 2.0 & Threat Landscape 2.0</div><div class="cert-by">Fortinet Training Institute · 2024</div></div>
+      <div class="tile"><div class="cert-n">12</div><div class="cert-name">Intro to DFIR: The Divide and Conquer Process</div><div class="cert-by">Cyber Triage · Sep 2023</div></div>
     </div>
   </div>
 </section>
@@ -562,7 +587,7 @@ footer {
       <div class="tile" style="padding:44px 40px">
         <div class="ach-icon">🏆</div>
         <div class="ach-title">Bug Bounty Hall of Fame</div>
-        <p class="ach-desc">Received a financial bounty and <strong style="color:var(--text)">public Hall of Fame credit from RepAutomate (2026)</strong> for the responsible disclosure of a critical Stored XSS via File Upload vulnerability in a production web application. Coordinated full remediation directly with the security team.</p>
+        <p class="ach-desc">Received a financial bounty and <strong style="color:var(--text)">Hall of Fame recognition from RepAutomate (2026)</strong> for the responsible disclosure of a Stored XSS via File Upload vulnerability.</p>
         <div class="ach-chip">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Financial Bounty + Hall of Fame
@@ -571,10 +596,28 @@ footer {
       <div class="tile" style="padding:44px 40px">
         <div class="ach-icon">🌐</div>
         <div class="ach-title">TryHackMe — Top 1% Global</div>
-        <p class="ach-desc">Consistently ranked in the <strong style="color:var(--text)">top 1% of users worldwide</strong> on TryHackMe across practical cybersecurity labs, CTFs, and hands-on challenge rooms — covering exploitation, privilege escalation, web security, forensics, and OSINT.</p>
+        <p class="ach-desc">Ranked among the <strong style="color:var(--text)">top 1% of users worldwide</strong> on TryHackMe across practical cybersecurity labs and CTFs.</p>
         <div class="ach-chip">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Top 1% Global Ranking
+        </div>
+      </div>
+      <div class="tile" style="padding:44px 40px">
+        <div class="ach-icon">🛡️</div>
+        <div class="ach-title">International Symposium on Cyber Defence</div>
+        <p class="ach-desc"><strong style="color:var(--text)">RRU Execution Team Volunteer</strong> at the SEBI × NISM × RRU symposium (2026). Supported White Team evaluation and execution of a 5-day international cybersecurity symposium with participants from 15 countries.</p>
+        <div class="ach-chip">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          SEBI × NISM × RRU · 2026
+        </div>
+      </div>
+      <div class="tile" style="padding:44px 40px">
+        <div class="ach-icon">🤝</div>
+        <div class="ach-title">Cyber Security Awareness Event</div>
+        <p class="ach-desc"><strong style="color:var(--text)">Volunteer</strong> across a 7-day cyber security awareness event held at Reliance Industries, Jamnagar.</p>
+        <div class="ach-chip">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Reliance Industries, Jamnagar
         </div>
       </div>
     </div>
@@ -591,15 +634,15 @@ footer {
       <p>Open to cybersecurity internships, research collaborations, bug bounty work, and full-time opportunities. Let's connect.</p>
       <a class="c-email" href="mailto:parthjethva1107@gmail.com">parthjethva1107@gmail.com</a>
       <div class="c-links">
-        <a class="c-link" href="https://linkedin.com/in/parthjethva" target="_blank">
+        <a class="c-link" href="https://linkedin.com/in/parthjethva" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
-        <a class="c-link" href="https://github.com/parthjethva1407" target="_blank">
+        <a class="c-link" href="https://github.com/parthjethva1407" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           GitHub
         </a>
-        <a class="c-link" href="https://tryhackme.com/p/parthjethva1107" target="_blank">
+        <a class="c-link" href="https://tryhackme.com/p/parthjethva1107" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           TryHackMe
         </a>
@@ -618,9 +661,9 @@ footer {
   <div class="f-left">© 2026 Parth Jethva · Ahmedabad, Gujarat, India</div>
   <div class="f-right">
     <a href="mailto:parthjethva1107@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/parthjethva" target="_blank">LinkedIn</a>
-    <a href="https://github.com/parthjethva1407" target="_blank">GitHub</a>
-    <a href="https://tryhackme.com/p/parthjethva1107" target="_blank">TryHackMe</a>
+    <a href="https://linkedin.com/in/parthjethva" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/parthjethva1407" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://tryhackme.com/p/parthjethva1107" target="_blank" rel="noopener">TryHackMe</a>
   </div>
 </footer>
 
